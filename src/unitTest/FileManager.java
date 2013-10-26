@@ -3,27 +3,30 @@ import java.io.File;
 import java.util.ArrayList;
 
 public class FileManager {
-	private final String JAVA_FILE_EXTENSION = "java";
-	private final String JAVA_FILE_CLASS_EXTENSION = "class";
 	private String directory = "test";
+	private String extensionFilter = "java";
 	
-	public FileManager()
-	{
+	public FileManager() {
 	}
 	
-	public void setFolder(String directory)
-	{
+	public void setFolder(String directory) {
 		this.directory = directory;
 	}
-	
-	public ArrayList<String> getJavaFiles() throws Exception
-	{
-        File folder = new File(directory);
-        return getFiles(folder);
+
+	public void setExtensionFilter(String extensionFilter) {
+		this.extensionFilter = extensionFilter;
 	}
 	
-	private ArrayList<String> getFiles(File folder) throws Exception
-	{
+	public ArrayList<String> getFiles() throws Exception {
+        File folder = new File(directory);
+        return getFilesInFolder(folder);
+	}
+
+	public boolean fileExists(String fileName) {
+		return true;
+	}
+	
+	private ArrayList<String> getFilesInFolder(File folder) throws Exception {
 		if ( ! folder.isDirectory() ) {
 			throw new Exception(folder.getName());
 		}
@@ -32,7 +35,7 @@ public class FileManager {
         File[] listOfFiles = folder.listFiles();
         
         for (File file : listOfFiles) {
-            if (validJavaFile(file)) {
+            if (validFile(file)) {
             	files.add(file.getName());
             }
         }
@@ -40,20 +43,16 @@ public class FileManager {
         return files;
 	}
 	
-    private boolean validJavaFile(File file)
-    {
+    private boolean validFile(File file) {
     	return file.isFile() && validExtension(file.getName());
     }
     
-    private boolean validExtension(String fileName)
-    {
-    	return getFileExtension(fileName) == JAVA_FILE_EXTENSION;
+    private boolean validExtension(String fileName) {
+    	return getFileExtension(fileName) == extensionFilter;
     }
 
-    private String getFileExtension(String fileName)
-    {
+    private String getFileExtension(String fileName) {
         int i = fileName.lastIndexOf('.');
         return i > 0 ? fileName.substring(i + 1) : "";
     }
-
 }
