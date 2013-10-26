@@ -4,6 +4,10 @@ import unitTest.Affirm;
 
 public abstract class Test {
 	
+	public Test(){
+		run();
+	}
+	
 	/*Metodo que el usuario implementara para que sus tests se ejecuten */
 	public abstract void run();
 	
