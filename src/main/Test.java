@@ -1,6 +1,6 @@
-package unitTest;
+package main;
 
-import unitTest.Affirm;
+import main.Affirm;
 
 public abstract class Test {
 	

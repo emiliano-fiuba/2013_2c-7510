@@ -1,4 +1,4 @@
-package unitTest;
+package main;
 
 public class Affirm {
 

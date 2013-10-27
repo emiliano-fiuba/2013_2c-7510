@@ -1,8 +1,9 @@
 package test;
 
 import static org.junit.Assert.*;
+import main.Affirm;
+
 import org.junit.Test;
-import unitTest.Affirm;
 
 public class AffirmTest {
 

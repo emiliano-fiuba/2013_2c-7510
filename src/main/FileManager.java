@@ -1,4 +1,4 @@
-package unitTest;
+package main;
 import java.io.File;
 import java.util.ArrayList;
 
@@ -23,7 +23,8 @@ public class FileManager {
 	}
 
 	public boolean fileExists(String fileName) {
-		return true;
+		File file = new File(fileName);
+		return file.exists();
 	}
 	
 	private ArrayList<String> getFilesInFolder(File folder) throws Exception {
