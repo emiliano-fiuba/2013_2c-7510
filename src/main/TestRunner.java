@@ -13,14 +13,14 @@ public class TestRunner {
 		FileManager fileManager = new FileManager();
 		ArrayList<String> files = new ArrayList<String>();
 		
-		fileManager.setFolder("../test");
+		fileManager.setFolder("../../bin/test/");
 		fileManager.setExtensionFilter("class");
 		
 		if (args.length > 0) {
 			// Execute specific files
 			for (int i = 0; i < args.length; i++) {
 				if (fileManager.fileExists(args[i])) {
-					files.add(args[i]); //Pending file validation
+					files.add(args[i]);
 				}
 			}
 
@@ -29,25 +29,23 @@ public class TestRunner {
 			files = fileManager.getFiles();
 		}
 
-		// Execute all files
+		// Execute files
 		for (String file : files) {
-			execute(file);
+			execute(buildExecuteCommand(file));
 		}
 	}
 	
-    private static void execute(String command) throws IOException
-    {
-        Process tr = Runtime.getRuntime().exec(command);
-        Writer wr = new OutputStreamWriter( tr.getOutputStream() );
-        BufferedReader rd = new BufferedReader( new InputStreamReader( tr.getInputStream() ) );
+    private static void execute(String command) throws IOException {
+        Process proc = Runtime.getRuntime().exec(command);
+        Writer wr = new OutputStreamWriter(proc.getOutputStream());
+        BufferedReader rd = new BufferedReader(new InputStreamReader(proc.getInputStream()));
         wr.flush();
 
         String s = rd.readLine();
-        System.out.println( s );
+        System.out.println(s);
     }
     
-    private String getFileExtension(String fileName) {
-        int i = fileName.lastIndexOf('.');
-        return i > 0 ? fileName.substring(0, i-1) : "";
+    private static String buildExecuteCommand(String fileName) {
+    	return "java " + fileName;
     }
 }
