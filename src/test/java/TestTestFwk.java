@@ -8,8 +8,7 @@ public class TestTestFwk extends Test {
 		run();
 	}
 
-	public static void run()
-	{
+	public static void run() {
 		equalsObjectTest();
 		notEqualsObjectTest();
 		notEqualsIntTest();
