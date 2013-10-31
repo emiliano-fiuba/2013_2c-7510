@@ -3,27 +3,18 @@ package main.java;
 public class TestResult {
 	private String methodName;
 	private boolean testPassed;
+	private ResultBoard rb;
 	
 	public TestResult(String methodName, boolean testPassed) {
 		this.methodName = methodName;
 		this.testPassed = testPassed;
-	}
-	
-	public void informTestPassed() {
-		System.out.println(methodName + ": ok");
-	}
-	
-	public void informTestFail() {
-		System.err.println(methodName + ": FAIL");	
+		rb = new ResultBoard();
 	}
 
 	public void informResult() {
-		if (testPassed) {
-			informTestPassed();
-		}
-		else {
-			informTestFail();
-		}		
+		
+		rb.ShowResult(methodName, testPassed);
 	}
 
 }
+	
