@@ -44,7 +44,7 @@ public abstract class Test {
 	}
 
 	public static void assertEquals(String methodName, Object a, Object b) {
-		boolean result = Affirm.checkNotEquals(a, b);
+		boolean result = Affirm.checkEquals(a, b);
 		TestResult tr = new TestResult(methodName, result);
 		tr.informResult();
 	}
