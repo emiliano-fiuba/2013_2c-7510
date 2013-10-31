@@ -7,15 +7,15 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.ArrayList;
 
-public class TestRunner {
+public class TestRunner extends Test {
 
-	public static void main(String[] args) throws Exception{
+	public static void main(String[] args) throws Exception {
 		FileManager fileManager = new FileManager();
 		ArrayList<String> files = new ArrayList<String>();
 		
-		fileManager.setFolder("../test");
+		fileManager.setFolder("src/test");
 		fileManager.setExtensionFilter("class");
-		
+
 		if (args.length > 0) {
 			// Execute specific files
 			for (int i = 0; i < args.length; i++) {
@@ -46,8 +46,10 @@ public class TestRunner {
         System.out.println( s );
     }
     
-    private String getFileExtension(String fileName) {
+    private String getFileExtension(String fileName)
+    {
         int i = fileName.lastIndexOf('.');
         return i > 0 ? fileName.substring(0, i-1) : "";
     }
+    
 }

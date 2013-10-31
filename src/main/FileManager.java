@@ -36,7 +36,7 @@ public class FileManager {
         File[] listOfFiles = folder.listFiles();
         
         for (File file : listOfFiles) {
-            if (validFile(file)) {
+        	if (validFile(file)) {
             	files.add(file.getName());
             }
         }

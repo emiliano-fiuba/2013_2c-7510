@@ -1,25 +1,29 @@
 package main;
 
 public class TestResult {
-	private static final String RED = "red";
-	private static final String GREEN = "green";
-	
 	private String methodName;
-	private String color;
+	private boolean testPassed;
 	
-	public TestResult(String methodName, boolean result){
+	public TestResult(String methodName, boolean testPassed) {
 		this.methodName = methodName;
-		
-		if (result == true){
-			color = GREEN;
-		}
-		else {
-			color = RED;
-		}
+		this.testPassed = testPassed;
 	}
 	
-	public void informResult(){
-		System.out.println(methodName + ": " + color);
+	public void informTestPassed() {
+		System.out.println(methodName + ": ok");
+	}
+	
+	public void informTestFail() {
+		System.err.println(methodName + ": FAIL");	
+	}
+
+	public void informResult() {
+		if (testPassed) {
+			informTestPassed();
+		}
+		else {
+			informTestFail();
+		}		
 	}
 
 }
