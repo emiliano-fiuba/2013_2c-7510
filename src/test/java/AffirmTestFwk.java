@@ -10,11 +10,7 @@ import main.java.Test;
  */
 public class AffirmTestFwk extends Test {
 
-    public static void main(String[] args) throws Exception {
-        run();
-    }
-
-    public static void run() {
+    public void run() {
         equalsObjectTest();
         notEqualsObjectTest();
         notEqualsIntTest();
