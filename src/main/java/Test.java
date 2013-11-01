@@ -9,6 +9,12 @@ package main.java;
  *
  */
 public abstract class Test {
+	
+	public abstract void run ();
+	
+	public void setUp () { };
+	
+	public void tearDown () { };
     
     /**
      * @param methodName test's method name
