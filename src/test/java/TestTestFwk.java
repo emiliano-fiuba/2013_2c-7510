@@ -10,6 +10,10 @@ import main.java.Test;
  */
 public class TestTestFwk extends Test {
 
+	public TestTestFwk(String newName) {
+		super(newName);
+	}
+	
     public void run() {
         equalsObjectTest();
         notEqualsObjectTest();

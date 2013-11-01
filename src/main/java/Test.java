@@ -10,12 +10,26 @@ package main.java;
  */
 public abstract class Test {
 	
+	protected String name;
+	
+	public Test (String newName) {
+		name = newName;
+	}
+	
 	public abstract void run ();
 	
 	public void setUp () { };
 	
 	public void tearDown () { };
+	
+	public String getName() {
+		return name;
+	}
     
+	public void setName(String newName) {
+		name = newName;
+	}
+	
     /**
      * @param methodName test's method name
      * @param a int value to be compare with b

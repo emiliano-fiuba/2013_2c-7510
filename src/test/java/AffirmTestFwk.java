@@ -9,6 +9,10 @@ import main.java.Test;
  * @author Miguenz, Rodriguez, Suárez
  */
 public class AffirmTestFwk extends Test {
+	
+	public AffirmTestFwk(String newName) {
+		super(newName);
+	}
 
     public void run() {
         equalsObjectTest();

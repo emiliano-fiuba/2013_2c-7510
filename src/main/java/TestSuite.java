@@ -5,6 +5,11 @@ import java.util.LinkedList;
 public class TestSuite extends Test {
 
 	protected LinkedList<Test> tests;
+
+	public TestSuite (String newName) {
+		super(newName);
+		tests = new LinkedList<Test>();
+	}
 	
 	@Override
 	public void run() {
