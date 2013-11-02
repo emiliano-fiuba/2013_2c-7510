@@ -48,4 +48,8 @@ public class Affirm {
     public static boolean checkNotEquals(float a, float b) {
         return a != b;
     }
+
+	public static boolean checkTrue(boolean expression) {
+		return expression == true;
+	}
 }

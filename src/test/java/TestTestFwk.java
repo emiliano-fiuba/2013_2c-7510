@@ -27,43 +27,43 @@ public class TestTestFwk extends Test {
         notEqualsFloatTest();
     }
 
-    public static void equalsObjectTest() {
+    public void equalsObjectTest() {
         assertEquals("equalsObjectTest", "Hello", "Hello");
     }
 
-    public static void notEqualsObjectTest() {
+    public void notEqualsObjectTest() {
         assertNotEquals("notEqualsObjectTest", "Hello", "ByeBye");
     }
     
-    public static void notEqualsIntTest() {
+    public void notEqualsIntTest() {
         assertNotEquals("notEqualsIntTest", 1, 2);
     }
 
-    public static void equalsIntTest() {
+    public void equalsIntTest() {
         assertEquals("equalsIntTest", 1, 1);
     }
 
-    public static void equalsBooleanTest() {
+    public void equalsBooleanTest() {
         assertEquals("equalsBooleanTest", true, true);
     }
 
-    public static void notEqualsBooleanTest() {
+    public void notEqualsBooleanTest() {
         assertNotEquals("notEqualsBooleanTest", true, false);
     }
 
-    public static void equalsCharTest() {
+    public void equalsCharTest() {
         assertEquals("equalsCharTest", 'a', 'a');
     }
 
-    public static void notEqualsCharTest() {
+    public void notEqualsCharTest() {
         assertNotEquals("notEqualsCharTest", 'a', 'b');
     }
     
-    public static void equalsFloatTest() {
+    public void equalsFloatTest() {
         assertEquals("equalsFloatTest", 1.1, 1.1);
     }
 
-    public static void notEqualsFloatTest() {
+    public void notEqualsFloatTest() {
         assertNotEquals("notEqualsFloatTest", 1.1, 1.2);
     }
 }

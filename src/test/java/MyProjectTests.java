@@ -1,6 +1,5 @@
 package test.java;
 
-import main.java.Test;
 import main.java.TestSuite;
 import main.java.TestRunner;
 

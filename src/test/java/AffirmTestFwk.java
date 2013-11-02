@@ -27,52 +27,52 @@ public class AffirmTestFwk extends Test {
         notEqualsFloatTest();
     }
 
-    public static void equalsObjectTest() {
+    public void equalsObjectTest() {
         assertEquals("equalsObjectTest", true, Affirm.checkEquals("Hello", "Hello"));
         assertEquals("equalsObjectTest", false, Affirm.checkEquals("Hello", "ByeBye"));
     }
     
-    public static void notEqualsObjectTest() {
+    public void notEqualsObjectTest() {
         assertEquals("notEqualsObjectTest", true, Affirm.checkNotEquals("Hello", "ByeBye"));
         assertEquals("notEqualsObjectTest", false, Affirm.checkNotEquals("Hello", "Hello"));
     }
         
-    public static void notEqualsIntTest() {
+    public void notEqualsIntTest() {
         assertEquals("notEqualsIntTest", true, Affirm.checkNotEquals(1, 2));
         assertEquals("notEqualsIntTest", false, Affirm.checkNotEquals(1, 1));
     }
     
-    public static void equalsIntTest() {
+    public void equalsIntTest() {
         assertEquals("equalsIntTest", true, Affirm.checkEquals(1, 1));
         assertEquals("equalsIntTest" ,false, Affirm.checkEquals(1, 2));
     }
     
-    public static void equalsBooleanTest() {
+    public void equalsBooleanTest() {
         assertEquals("equalsBooleanTest", true, Affirm.checkEquals(true, true));
         assertEquals("equalsBooleanTest", false, Affirm.checkEquals(true, false));
     }
     
-    public static void notEqualsBooleanTest() {
+    public void notEqualsBooleanTest() {
         assertEquals("notEqualsBooleanTest", true, Affirm.checkNotEquals(true, false));
         assertEquals("notEqualsBooleanTest", false, Affirm.checkNotEquals(true, true));
     }
     
-    public static void equalsCharTest() {
+    public void equalsCharTest() {
         assertEquals("equalsCharTest", true, Affirm.checkEquals('a', 'a'));
         assertEquals("equalsCharTest", false, Affirm.checkEquals('a', 'b'));
     }
 
-    public static void notEqualsCharTest() {
+    public void notEqualsCharTest() {
         assertEquals("notEqualsCharTest", true, Affirm.checkNotEquals('a', 'b'));
         assertEquals("notEqualsCharTest", false, Affirm.checkNotEquals('a', 'a'));
     }
     
-    public static void equalsFloatTest() {
+    public void equalsFloatTest() {
         assertEquals("equalsFloatTest", true, Affirm.checkEquals(1.1, 1.1));
         assertEquals("equalsFloatTest", false, Affirm.checkEquals(1.1, 1.2));
     }
 
-    public static void notEqualsFloatTest() {
+    public void notEqualsFloatTest() {
         assertEquals("notEqualsFloatTest", true, Affirm.checkNotEquals(1.1, 1.2));
         assertEquals("notEqualsFloatTest", false, Affirm.checkNotEquals(1.1, 1.1));
     }
