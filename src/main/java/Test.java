@@ -152,6 +152,5 @@ public abstract class Test {
     
     public void failure() {
     	assertTrue("failure", false);
-    }
-    
+    }    
 }

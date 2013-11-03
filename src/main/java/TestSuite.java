@@ -2,6 +2,7 @@ package main.java;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.regex.Pattern;
 
 public class TestSuite extends Test {
 
@@ -20,8 +21,28 @@ public class TestSuite extends Test {
 
 		for (Test t : col) {
 			t.setUp();
-			t.run();
+			try {
+				t.run();
+			} catch (Exception e) {
+				TestResult r = new TestResult(t.getName(), false);
+			}
 			t.tearDown();
+		}
+
+		tearDown();
+	}
+
+	public void run(String pattern) {
+		setUp();
+		
+		Collection<Test> col = tests.values();		
+
+		for (Test t : col) {
+			if (Pattern.matches(pattern, t.getName())) {
+				t.setUp();
+				t.run();
+				t.tearDown();
+			}
 		}
 
 		tearDown();
