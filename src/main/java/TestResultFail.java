@@ -1,8 +1,8 @@
 package main.java;
 
-public class TestResultFalse extends TestResult {
+public class TestResultFail extends TestResult {
 	
-	public TestResultFalse(String testName) {
+	public TestResultFail(String testName) {
 		super (testName);
 	}
 	

@@ -51,12 +51,12 @@ public abstract class Test {
      */
     public void assertEquals(String methodName, int a, int b) {
         boolean result = Affirm.checkEquals(a, b);
-        TestResult testResult;
+        
         if (result == false) {
-        	 this.result = new TestResultFalse(this.getName());
+        	 this.result = new TestResultFail(this.getName());
         } 
         else {
-        	this.result = new TestResultTrue(this.getName());
+        	this.result = new TestResultOk(this.getName());
         }
         //testResult.informResult();
     }

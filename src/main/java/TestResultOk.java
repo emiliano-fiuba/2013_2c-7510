@@ -1,8 +1,8 @@
 package main.java;
 
-public class TestResultTrue extends TestResult {
+public class TestResultOk extends TestResult {
 	
-	public TestResultTrue(String testName) {
+	public TestResultOk(String testName) {
 		super (testName);
 	}
 	

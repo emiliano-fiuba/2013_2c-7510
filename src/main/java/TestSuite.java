@@ -16,6 +16,7 @@ public class TestSuite extends Test {
 	
 	@Override
 	public void run() {
+		ResultPrinter.getInstance().addSuite(this.getName());
 		setUp();
 		
 		Collection<Test> col = tests.values();		
@@ -28,9 +29,12 @@ public class TestSuite extends Test {
 				t.setResult(new TestResultError(t.getName()));
 			}
 			t.tearDown();
+			
+			ResultPrinter.getInstance().addTestResults(t);
 		}
 
 		tearDown();
+		ResultPrinter.getInstance().removeSuite(this.getName());
 	}
 
 	public void run(String pattern) {

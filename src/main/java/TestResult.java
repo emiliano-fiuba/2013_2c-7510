@@ -31,4 +31,8 @@ public class TestResult {
     public void informResult() {
         resultBoard.ShowResult(methodName, testPassed);
     }
+    
+    public String print() {
+    	return "";
+    }
 }
