@@ -12,6 +12,8 @@ public abstract class Test {
 	
 	protected String name;
 	
+	protected TestResult result;
+	
 	public Test (String newName) {
 		name = newName;
 	}
@@ -30,6 +32,14 @@ public abstract class Test {
 		name = newName;
 	}
 	
+	public void setResult(TestResult testResult) {
+		result = testResult;
+	}
+	
+	public TestResult getResult() {
+		return result;
+	}
+	
 	public boolean equals(Test test) {
 		return this.name == test.getName();
 	}
@@ -41,8 +51,14 @@ public abstract class Test {
      */
     public void assertEquals(String methodName, int a, int b) {
         boolean result = Affirm.checkEquals(a, b);
-        TestResult testResult = new TestResult(methodName, result);
-        testResult.informResult();
+        TestResult testResult;
+        if (result == false) {
+        	 this.result = new TestResultFalse(this.getName());
+        } 
+        else {
+        	this.result = new TestResultTrue(this.getName());
+        }
+        //testResult.informResult();
     }
     
     /**

@@ -9,9 +9,14 @@ package main.java;
  */
 public class TestResult {
 
-    private String methodName;
+	protected String testName;
+	private String methodName;
     private boolean testPassed;
     private ResultBoard resultBoard;
+    
+    public TestResult(String testName) {
+    	this.testName = testName;
+    }
     
     /**
      * @param methodName test's method name

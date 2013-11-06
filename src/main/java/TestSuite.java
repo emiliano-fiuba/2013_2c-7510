@@ -3,6 +3,7 @@ package main.java;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.regex.Pattern;
+import main.java.TestExistsException;
 
 public class TestSuite extends Test {
 
@@ -24,7 +25,7 @@ public class TestSuite extends Test {
 			try {
 				t.run();
 			} catch (Exception e) {
-				TestResult r = new TestResult(t.getName(), false);
+				t.setResult(new TestResultError(t.getName()));
 			}
 			t.tearDown();
 		}
@@ -48,12 +49,14 @@ public class TestSuite extends Test {
 		tearDown();
 	}
 	
-	public void addTest(Test t) {
+	public void addTest(Test t) throws TestExistsException {
 		if (!tests.containsKey(t.getName())) {
 			tests.put(t.getName(), t);
 		}
 		else { 
-			//throw exception? Send message? Return false? 
+			throw new TestExistsException(t.getName() 
+					+ " already present in TestSuite "
+					+ this.getName()); 
 		}
 	}
 

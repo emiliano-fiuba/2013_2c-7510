@@ -1,5 +1,6 @@
 package test.java;
 
+import main.java.TestExistsException;
 import main.java.TestSuite;
 import main.java.TestRunner;
 
@@ -14,8 +15,12 @@ public class MyProjectTests {
 		TestTestFwk testTest = new TestTestFwk("Test Test class");
 		TestSuite testSuite = new TestSuite("Test suite");
 		
-		testSuite.addTest(testTest);
-		testSuite.addTest(affirmTest);
+		try {
+			testSuite.addTest(testTest);
+			testSuite.addTest(affirmTest);
+		}catch (TestExistsException e) {
+			
+		}
 		
 		testRunner.startTesting(testSuite);
 
