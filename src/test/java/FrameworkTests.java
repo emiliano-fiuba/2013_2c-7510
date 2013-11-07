@@ -27,17 +27,18 @@ public class FrameworkTests {
 		EqualsCharTest equalsCharTest = new EqualsCharTest("Test two chars are equal");
 		
 		try {
-			testSuiteTest.addTest(equalsObjectTest);
-			testSuiteTest.addTest(notEqualsObjectTest);
-			testSuiteTest.addTest(notEqualsIntTest);
-			testSuiteTest.addTest(equalsIntTest);
-			testSuiteTest.addTest(notEqualsFloatTest);
-			testSuiteTest.addTest(equalsFloatTest);
-			testSuiteTest.addTest(notEqualsBooleanTest);
-			testSuiteTest.addTest(equalsBooleanTest);
-			testSuiteTest.addTest(notEqualsCharTest);
-			testSuiteTest.addTest(equalsCharTest);
+			testSuiteAffirm.addTest(equalsObjectTest);
+			testSuiteAffirm.addTest(notEqualsObjectTest);
+			testSuiteAffirm.addTest(notEqualsIntTest);
+			testSuiteAffirm.addTest(equalsIntTest);
+			testSuiteAffirm.addTest(notEqualsFloatTest);
+			testSuiteAffirm.addTest(equalsFloatTest);
+			testSuiteAffirm.addTest(notEqualsBooleanTest);
+			testSuiteAffirm.addTest(equalsBooleanTest);
+			testSuiteAffirm.addTest(notEqualsCharTest);
+			testSuiteAffirm.addTest(equalsCharTest);
 			
+			testSuiteAll.addTest(testSuiteAffirm);
 			testSuiteAll.addTest(testSuiteTest);
 			
 		}catch (TestExistsException e) {
