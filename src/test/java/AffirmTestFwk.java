@@ -14,7 +14,7 @@ public class AffirmTestFwk extends Test {
 		super(newName);
 	}
 
-    public void run() {
+    public void runTest() {
         equalsObjectTest();
         notEqualsObjectTest();
         notEqualsIntTest();

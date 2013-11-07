@@ -14,7 +14,7 @@ public class TestTestFwk extends Test {
 		super(newName);
 	}
 	
-    public void run() {
+    public void runTest() {
         equalsObjectTest();
         notEqualsObjectTest();
         notEqualsIntTest();
