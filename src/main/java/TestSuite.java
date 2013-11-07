@@ -40,7 +40,7 @@ public class TestSuite extends Test {
 	public void runTest(String pattern) {
 		setUp();
 		
-		Collection<Test> col = tests.values();		
+		Collection<Test> col = tests.values();
 
 		for (Test test : col) {
 			if (Pattern.matches(pattern, test.getName())) {
