@@ -26,6 +26,17 @@ public class FrameworkTests {
 		NotEqualsCharTest notEqualsCharTest = new NotEqualsCharTest("Test two chars are different");
 		EqualsCharTest equalsCharTest = new EqualsCharTest("Test two chars are equal");
 		
+		TestEqualsObjectTest testEqualsObjectTest = new TestEqualsObjectTest("Test two objects are equal using the Test class' methods");
+		TestNotEqualsObjectTest testNotEqualsObjectTest = new TestNotEqualsObjectTest("Test two objects are different using the Test class' methods");
+		TestNotEqualsIntTest testNotEqualsIntTest = new TestNotEqualsIntTest("Test two integers are different using the Test class' methods");
+		TestEqualsIntTest testEqualsIntTest = new TestEqualsIntTest("Test two integers are equal using the Test class' methods");
+		TestNotEqualsFloatTest testNotEqualsFloatTest = new TestNotEqualsFloatTest("Test two floats are different using the Test class' methods");
+		TestEqualsFloatTest testEqualsFloatTest = new TestEqualsFloatTest("Test two floats are equal using the Test class' methods");
+		TestNotEqualsBooleanTest testNotEqualsBooleanTest = new TestNotEqualsBooleanTest("Test two booleans are different using the Test class' methods");
+		TestEqualsBooleanTest testEqualsBooleanTest = new TestEqualsBooleanTest("Test two booleans are equal using the Test class' methods");
+		TestNotEqualsCharTest testNotEqualsCharTest = new TestNotEqualsCharTest("Test two chars are different using the Test class' methods");
+		TestEqualsCharTest testEqualsCharTest = new TestEqualsCharTest("Test two chars are equal using the Test class' methods");
+		
 		try {
 			testSuiteAffirm.addTest(equalsObjectTest);
 			testSuiteAffirm.addTest(notEqualsObjectTest);
@@ -37,6 +48,17 @@ public class FrameworkTests {
 			testSuiteAffirm.addTest(equalsBooleanTest);
 			testSuiteAffirm.addTest(notEqualsCharTest);
 			testSuiteAffirm.addTest(equalsCharTest);
+			
+			testSuiteTest.addTest(testEqualsObjectTest);
+			testSuiteTest.addTest(testNotEqualsObjectTest);
+			testSuiteTest.addTest(testNotEqualsIntTest);
+			testSuiteTest.addTest(testEqualsIntTest);
+			testSuiteTest.addTest(testNotEqualsFloatTest);
+			testSuiteTest.addTest(testEqualsFloatTest);
+			testSuiteTest.addTest(testNotEqualsBooleanTest);
+			testSuiteTest.addTest(testEqualsBooleanTest);
+			testSuiteTest.addTest(testNotEqualsCharTest);
+			testSuiteTest.addTest(testEqualsCharTest);
 			
 			testSuiteAll.addTest(testSuiteAffirm);
 			testSuiteAll.addTest(testSuiteTest);
