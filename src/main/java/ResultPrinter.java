@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class ResultPrinter {
 
-	private String SEPARATOR = "­----------------";
+	private String SEPARATOR = "----------------";
 	private String DOUBLE_SEPARATOR = "================";
 	private String SUMMARY_HDR = "[failure] Summary";
 	private static ResultPrinter instance = null;

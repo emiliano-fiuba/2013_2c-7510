@@ -11,8 +11,8 @@ package main.java;
 public abstract class Test {
 	
 	protected String name;
-	
 	protected TestResult result;
+	protected Fixture fixture;
 	
 	public Test (String newName) {
 		name = newName;
@@ -38,6 +38,14 @@ public abstract class Test {
 	
 	public TestResult getResult() {
 		return result;
+	}
+	
+	public void setFixture(Fixture fixture) {
+		this.fixture = fixture;	
+	}
+
+	public Fixture getFixture() {
+		return fixture;	
 	}
 	
 	public boolean equals(Test test) {
