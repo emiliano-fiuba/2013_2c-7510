@@ -4,7 +4,7 @@ import main.java.TestExistsException;
 import main.java.TestSuite;
 import main.java.TestRunner;
 
-public class MyProjectTests {
+public class FrameworkTests {
 
 	/**
 	 * @param args
@@ -15,8 +15,13 @@ public class MyProjectTests {
 		TestTestFwk testTest = new TestTestFwk("Test Test class");
 		TestSuite testSuite = new TestSuite("Test suite");
 		
+		EqualsObjectTest equalsObjectTest = new EqualsObjectTest("Test two objects are equal");
+		
 		try {
 			testSuite.addTest(testTest);
+			testSuite.addTest(equalsObjectTest);
+			
+			
 			testSuite.addTest(affirmTest);
 		}catch (TestExistsException e) {
 			

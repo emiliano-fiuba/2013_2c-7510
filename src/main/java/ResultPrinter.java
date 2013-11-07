@@ -19,6 +19,7 @@ public class ResultPrinter {
 		failedTests = 0;
 		errorTests = 0;
 		okTests = 0;
+		buffer = new ArrayList<String>();
 	}
 	
 	public static ResultPrinter getInstance() {
@@ -30,6 +31,7 @@ public class ResultPrinter {
 
 	public void addTestResults(Test test) {
 		buffer.add(test.getResult().print());
+		test.getResult().updateMe(this);
 	}
 	
 	public void addSuite(String suiteName) {
