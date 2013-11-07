@@ -11,7 +11,9 @@ public class FrameworkTests {
 	 */
 	public static void main(String[] args) {
 		TestRunner testRunner = new TestRunner();
-		TestSuite testSuite = new TestSuite("Test suite");
+		TestSuite testSuiteTest = new TestSuite("Test suite for testing Test");
+		TestSuite testSuiteAffirm = new TestSuite("Test suite for testing Affirm");
+		TestSuite testSuiteAll = new TestSuite("Test all");
 		
 		EqualsObjectTest equalsObjectTest = new EqualsObjectTest("Test two objects are equal");
 		NotEqualsObjectTest notEqualsObjectTest = new NotEqualsObjectTest("Test two objects are different");
@@ -19,16 +21,18 @@ public class FrameworkTests {
 		EqualsIntTest equalsIntTest = new EqualsIntTest("Test two integers are equal");
 		
 		try {
-			testSuite.addTest(equalsObjectTest);
-			testSuite.addTest(notEqualsObjectTest);
-			testSuite.addTest(notEqualsIntTest);
-			testSuite.addTest(equalsIntTest);
+			testSuiteTest.addTest(equalsObjectTest);
+			testSuiteTest.addTest(notEqualsObjectTest);
+			testSuiteTest.addTest(notEqualsIntTest);
+			testSuiteTest.addTest(equalsIntTest);
+			//Hqy que generar los tests de Affirm y agregarlos al suite, luego agregar el suite a testSuiteAll
+			testSuiteAll.addTest(testSuiteTest);
 			
 		}catch (TestExistsException e) {
 			
 		}
 		
-		testRunner.startTesting(testSuite);
+		testRunner.startTesting(testSuiteAll);
 
 	}
 }

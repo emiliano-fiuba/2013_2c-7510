@@ -30,8 +30,10 @@ public class ResultPrinter {
 	}
 
 	public void addTestResults(Test test) {
-		buffer.add(test.getResult().print());
-		test.getResult().updateMe(this);
+		try {
+			buffer.add(test.getResult().print());
+			test.getResult().updateMe(this);
+		} catch (NullPointerException e) { }
 	}
 	
 	public void addSuite(String suiteName) {
@@ -46,13 +48,15 @@ public class ResultPrinter {
 	}
 	
 	public void print() { 
+		int totalTests = okTests + failedTests + errorTests;
 		for (String s: buffer) {
 			System.out.println(s);
 		}
 		
+		System.out.println("");
 		System.out.println(SUMMARY_HDR);
 		System.out.println(DOUBLE_SEPARATOR);
-		System.out.println("Run: " + failedTests + okTests + errorTests);
+		System.out.println("Run: " + totalTests);
 		System.out.println("Errors: " + errorTests);
 		System.out.println("Failures: " + failedTests);
 	}
