@@ -7,7 +7,7 @@ import main.java.TestExistsException;
 
 public class TestSuite extends Test {
 
-	protected HashMap<String,Test> tests;
+	private HashMap<String,Test> tests;
 
 	public TestSuite (String newName) {
 		super(newName);
