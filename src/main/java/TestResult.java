@@ -7,7 +7,7 @@ package main.java;
  * @author Miguenz, Rodriguez, Suárez
  *
  */
-public class TestResult {
+public abstract class TestResult {
 
 	protected String testName;
 	private String methodName;
@@ -35,4 +35,6 @@ public class TestResult {
     public String print() {
     	return "";
     }
+    
+    public abstract void updateMe(ResultPrinter printer);
 }

@@ -9,4 +9,9 @@ public class TestResultError extends TestResult {
 	public String print() {
 		return "[error] " + this.testName;
 	}
+
+	@Override
+	public void updateMe(ResultPrinter printer) {
+		printer.oneMoreTestErrored();
+	}
 }

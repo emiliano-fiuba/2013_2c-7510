@@ -9,4 +9,9 @@ public class TestResultOk extends TestResult {
 	public String print() {
 		return "[ok] " + this.testName;
 	}
+
+	@Override
+	public void updateMe(ResultPrinter printer) {
+		printer.oneMoreTestOk();
+	}
 }

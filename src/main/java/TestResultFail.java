@@ -9,4 +9,9 @@ public class TestResultFail extends TestResult {
 	public String print() {
 		return "[fail] " + this.testName;
 	}
+
+	@Override
+	public void updateMe(ResultPrinter printer) {
+		printer.oneMoreTestFailed();
+	}
 }
