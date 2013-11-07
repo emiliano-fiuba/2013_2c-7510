@@ -18,11 +18,9 @@ public abstract class Test {
 		name = newName;
 	}
 	
-	public abstract void run ();
-	
-	public void setUp () { };
-	
-	public void tearDown () { };
+	public abstract void runTest();
+	public void setUp() { };
+	public void tearDown() { };
 	
 	public String getName() {
 		return name;

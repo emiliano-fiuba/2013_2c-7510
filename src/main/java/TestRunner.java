@@ -2,12 +2,12 @@ package main.java;
 
 public class TestRunner {  
 	
-	public void startTesting(TestSuite t) {
-		t.run();
+	public void startTesting(TestSuite testSuite) {
+		testSuite.runTest();
 		ResultPrinter.getInstance().print();
 	}
 	
-	public void startTesting(TestSuite t, String pattern) {
-		t.run(pattern);
+	public void startTesting(TestSuite testSuite, String pattern) {
+		testSuite.runTest(pattern);
 	}
 }

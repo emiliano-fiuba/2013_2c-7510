@@ -15,50 +15,50 @@ public class TestSuite extends Test {
 	}
 	
 	@Override
-	public void run() {
+	public void runTest() {
 		ResultPrinter.getInstance().addSuite(this.getName());
 		setUp();
 		
 		Collection<Test> col = tests.values();		
 
-		for (Test t : col) {
-			t.setUp();
+		for (Test test : col) {
+			test.setUp();
 			try {
-				t.run();
+				test.runTest();
 			} catch (Exception e) {
-				t.setResult(new TestResultError(t.getName()));
+				test.setResult(new TestResultError(test.getName()));
 			}
-			t.tearDown();
+			test.tearDown();
 			
-			ResultPrinter.getInstance().addTestResults(t);
+			ResultPrinter.getInstance().addTestResults(test);
 		}
 
 		tearDown();
 		ResultPrinter.getInstance().removeSuite(this.getName());
 	}
 
-	public void run(String pattern) {
+	public void runTest(String pattern) {
 		setUp();
 		
 		Collection<Test> col = tests.values();		
 
-		for (Test t : col) {
-			if (Pattern.matches(pattern, t.getName())) {
-				t.setUp();
-				t.run();
-				t.tearDown();
+		for (Test test : col) {
+			if (Pattern.matches(pattern, test.getName())) {
+				test.setUp();
+				test.runTest();
+				test.tearDown();
 			}
 		}
 
 		tearDown();
 	}
 	
-	public void addTest(Test t) throws TestExistsException {
-		if (!tests.containsKey(t.getName())) {
-			tests.put(t.getName(), t);
+	public void addTest(Test test) throws TestExistsException {
+		if (!tests.containsKey(test.getName())) {
+			tests.put(test.getName(), test);
 		}
 		else { 
-			throw new TestExistsException(t.getName() 
+			throw new TestExistsException(test.getName() 
 					+ " already present in TestSuite "
 					+ this.getName()); 
 		}
