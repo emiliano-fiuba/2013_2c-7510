@@ -51,7 +51,7 @@ public abstract class Test {
      */
     public void assertEquals(String methodName, int a, int b) {
         boolean result = Affirm.checkEquals(a, b);
-        assignTestResult(result);
+        createTestResult(result);
     }
     
     /**
@@ -61,7 +61,7 @@ public abstract class Test {
      */
     public void assertNotEquals(String methodName, int a, int b) {
         boolean result = Affirm.checkNotEquals(a, b);
-        assignTestResult(result);
+        createTestResult(result);
     }
     
     /**
@@ -71,7 +71,7 @@ public abstract class Test {
      */
     public void assertEquals(String methodName, char a, char b) {
         boolean result = Affirm.checkEquals(a, b);
-        assignTestResult(result);
+        createTestResult(result);
     }
     
     /**
@@ -81,7 +81,7 @@ public abstract class Test {
      */
     public void assertNotEquals(String methodName, char a, char b) {
         boolean result = Affirm.checkNotEquals(a, b);
-        assignTestResult(result);
+        createTestResult(result);
     }
     
     /**
@@ -91,7 +91,7 @@ public abstract class Test {
      */
     public void assertEquals(String methodName, boolean a, boolean b) {
         boolean result = Affirm.checkEquals(a, b);
-        assignTestResult(result);
+        createTestResult(result);
     }
     
     /**
@@ -101,7 +101,7 @@ public abstract class Test {
      */
     public void assertNotEquals(String methodName, boolean a, boolean b) {
         boolean result = Affirm.checkNotEquals(a, b);
-        assignTestResult(result);
+        createTestResult(result);
     }
     
     /**
@@ -111,7 +111,7 @@ public abstract class Test {
      */
     public void assertEquals(String methodName, Object a, Object b) {
         boolean result = Affirm.checkEquals(a, b);
-        assignTestResult(result);
+        createTestResult(result);
     }
     
     /**
@@ -121,7 +121,7 @@ public abstract class Test {
      */
     public void assertNotEquals(String methodName, Object a, Object b) {
         boolean result = Affirm.checkNotEquals(a, b);
-        assignTestResult(result);
+        createTestResult(result);
     }
     
     /**
@@ -131,7 +131,7 @@ public abstract class Test {
      */
     public void assertEquals(String methodName, float a, float b) {
         boolean result = Affirm.checkNotEquals(a, b);
-        assignTestResult(result);
+        createTestResult(result);
     }
     
     /**
@@ -141,19 +141,19 @@ public abstract class Test {
      */
     public void assertNotEquals(String methodName, float a, float b) {
         boolean result = Affirm.checkNotEquals(a, b);
-        assignTestResult(result);
+        createTestResult(result);
     }
 
     public void assertTrue(String methodName, boolean expression) {
     	boolean result = Affirm.checkTrue(expression);
-    	assignTestResult(result);
+    	createTestResult(result);
     }
     
     public void failure() {
     	assertTrue("failure", false);
     }
     
-    private void assignTestResult(boolean r) {
+    private void createTestResult(boolean r) {
 
         if (r == false) {
        	 this.result = new TestResultFail(this.getName());
