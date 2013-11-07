@@ -10,7 +10,7 @@ public class EqualsObjectTest extends Test {
 	}
 
 	@Override
-	public void run() {
+	public void runTest() {
 		equalsObjectTest();
 	}
 

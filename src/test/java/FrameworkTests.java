@@ -11,18 +11,19 @@ public class FrameworkTests {
 	 */
 	public static void main(String[] args) {
 		TestRunner testRunner = new TestRunner();
-		AffirmTestFwk affirmTest = new AffirmTestFwk("Test Affirm class");
-		TestTestFwk testTest = new TestTestFwk("Test Test class");
 		TestSuite testSuite = new TestSuite("Test suite");
 		
 		EqualsObjectTest equalsObjectTest = new EqualsObjectTest("Test two objects are equal");
+		NotEqualsObjectTest notEqualsObjectTest = new NotEqualsObjectTest("Test two objects are different");
+		NotEqualsIntTest notEqualsIntTest = new NotEqualsIntTest("Test two integers are different");
+		EqualsIntTest equalsIntTest = new EqualsIntTest("Test two integers are equal");
 		
 		try {
-			testSuite.addTest(testTest);
 			testSuite.addTest(equalsObjectTest);
+			testSuite.addTest(notEqualsObjectTest);
+			testSuite.addTest(notEqualsIntTest);
+			testSuite.addTest(equalsIntTest);
 			
-			
-			testSuite.addTest(affirmTest);
 		}catch (TestExistsException e) {
 			
 		}
